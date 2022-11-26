@@ -47,7 +47,7 @@
    
         <div class="col-4" style="margin-top: 10px">
             <button class="btn btn-primary" ><a href="Dashboard.jsp" style="color:white"><i class="fa-solid fa-house-user"></i> Dashboard</a></button>
-            <button class="btn btn-primary" ><a href="Register.jsp" style="color:white"><i class="fa-solid fa-arrow-right-to-bracket"></i> Register</a></button>
+            <button class="btn btn-primary" ><a href="Register.jsp" style="color:white"><i class="fa-solid fa-user-plus"></i> Register</a></button>
         </div>
    
         <section class="container wrapper col-4" style="border-radius:10px;margin-top:30px;padding:30px;background-color: white;">

@@ -24,7 +24,6 @@
 	white-space: nowrap; 
 	overflow: hidden;
 	color: #0085FF; 
-	cursor: pointer;
 	margin-top: 10px;
 	margin-bottom: 20px;
 }
@@ -35,6 +34,7 @@
 	box-shadow: rgb(204, 219, 232) 6px 6px 12px -3px inset, rgba(255, 255, 255, 0.5) -6px -6px 12px 2px inset;
 	border: 20px solid white;
 	border-radius: 10px;
+	cursor:default
 }
 .content {
 	height: 270px;
@@ -43,7 +43,6 @@
 	width: 100%;
 	outline: none;
 	border: none;
-	cursor: pointer;
 	margin-top: -10px;
 	resize: none;
 }
@@ -132,7 +131,7 @@
 						// out.print(id_user);
 						// out.print(session.getAttribute("id"));
 				%>
-					<p class="title alert alert-primary" style=""><i class="fa-solid fa-bookmark"></i> <%= article.getTitle() %></p>
+					<p class="title alert alert-primary" style="cursor:default ;"><i class="fa-solid fa-bookmark"></i> <%= article.getTitle() %></p>
 					<textarea rows="7" style="" disabled class="content"><%= article.getContent() %></textarea>					
 				</a>
 			<% } %>

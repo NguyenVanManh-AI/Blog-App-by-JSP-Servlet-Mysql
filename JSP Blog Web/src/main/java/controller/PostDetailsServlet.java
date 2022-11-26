@@ -25,7 +25,6 @@ public class PostDetailsServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id_article = request.getParameter("id_article");
-		
 		ArticleBO ArticleBO = new ArticleBO();
 		Article Article = null;
 		try {
