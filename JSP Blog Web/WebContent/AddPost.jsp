@@ -92,11 +92,11 @@
                 <h1 class="d-flex justify-content-center">Add Post</h1>
                 <!-- error -->
                 <% if(request.getAttribute("mess_add_error") != null){ %>
-                    <div class="alert alert-danger" role="alert"><%= request.getAttribute("mess_add_error") %></div>
+                    <div class="alert alert-danger" role="alert"><i class="fa-solid fa-triangle-exclamation"></i> <%= request.getAttribute("mess_add_error") %></div>
                 <% } %>
 
                 <% if(request.getAttribute("mess_add_success") != null){ %>
-                    <div class="alert alert-success" role="alert"><%= request.getAttribute("mess_add_success") %></div>
+                    <div class="alert alert-success" role="alert"><i class="fa-solid fa-check-double"></i> <%= request.getAttribute("mess_add_success") %></div>
                 <% } %>
                 
                 Title <input type="text" class="form-control" name="title" placeholder="Title" /> </br>

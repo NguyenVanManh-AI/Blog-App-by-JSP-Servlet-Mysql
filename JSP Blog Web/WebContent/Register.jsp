@@ -56,12 +56,12 @@
                 
                 <!-- succes -->
                 <% if(request.getAttribute("mess_register_succes") != null){ %>
-                    <div class="alert alert-success" role="alert"><%= request.getAttribute("mess_register_succes") %></div>
+                    <div class="alert alert-success" role="alert"><i class="fa-solid fa-check-double"></i> <%= request.getAttribute("mess_register_succes") %></div>
                 <% } %>
                 
                 <!-- error -->
                 <% if(request.getAttribute("mess_register_error") != null){ %>
-                    <div class="alert alert-danger" role="alert"><%= request.getAttribute("mess_register_error") %></div>
+                    <div class="alert alert-danger" role="alert"><i class="fa-solid fa-triangle-exclamation"></i> <%= request.getAttribute("mess_register_error") %></div>
                 <% } %>
                 
                 Username<input type="text" class="form-control" name="username" placeholder="Username" /> </br>

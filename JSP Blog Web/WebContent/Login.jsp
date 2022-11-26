@@ -56,7 +56,7 @@
                 
                 <!-- error -->
                 <% if(request.getAttribute("mess_login_error") != null){ %>
-                    <div class="alert alert-danger" role="alert"><%= request.getAttribute("mess_login_error") %></div>
+                    <div class="alert alert-danger" role="alert"><i class="fa-solid fa-triangle-exclamation"></i> <%= request.getAttribute("mess_login_error") %></div>
                 <% } %>
                 
                 Username<input type="text" class="form-control" name="username" placeholder="Username" /> </br>
