@@ -28,10 +28,7 @@ public class CheckLoginServlet extends HttpServlet {
 		if(username == "" || username == null || password == "" || password == null) {
 			request.setAttribute("mess_login_error", "Username or Password cannot be left blank !!!");
 			request.getRequestDispatcher("Login.jsp").forward(request, response);
-			return ;  // Note : return rất quan trọng và nên có . 
-			// return để nó không thực hiện tiếp các câu lệnh phía sau . Nếu không có return 
-			// một số câu lệnh sẽ được tiếp tục thực hiện sẽ gây ra lỗi 
-			// hoặc ngay sau khi báo lỗi mess_login_error ra rồi ta request lại trang cũng lỗi 
+			return ;  
 		}
 		
 //		if (username == null || password == null) {
