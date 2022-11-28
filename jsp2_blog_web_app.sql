@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 26, 2022 lúc 02:41 PM
+-- Thời gian đã tạo: Th10 28, 2022 lúc 03:21 PM
 -- Phiên bản máy phục vụ: 10.4.22-MariaDB
 -- Phiên bản PHP: 7.4.27
 
@@ -54,18 +54,20 @@ INSERT INTO `articles` (`id`, `title`, `content`, `id_user`) VALUES
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `fullname` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`) VALUES
-(1, 'vanmanh', 'vanmanh'),
-(14, 'thanhnguyen', 'thanhnguyen'),
-(16, 'vanmanh999', 'vanmanh999'),
-(18, 'congcuong', 'congcuong');
+INSERT INTO `users` (`id`, `username`, `password`, `fullname`) VALUES
+(1, 'vanmanh', 'vanmanh', 'Nguyễn Văn Mạnh'),
+(14, 'thanhnguyen', 'thanhnguyen', 'Trần Thanh Nguyên'),
+(16, 'vanmanh999', 'vanmanh999', 'Nguyễn Văn Mạnh Pro'),
+(18, 'congcuong', 'congcuong', 'Nguyễn Công Cường'),
+(24, 'hoangphuc', 'hoangphuc', 'Nguyễn Văn Hoàng Phúc');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -91,13 +93,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -66,6 +66,7 @@ public class CheckLoginServlet extends HttpServlet {
 		if (isLogged) {
 			HttpSession session = request.getSession();
 			session.setAttribute("username", User.getUsername());
+			session.setAttribute("fullname", User.getFullname());
 			session.setAttribute("id", User.getId());
 			response.sendRedirect("MyPost.jsp");
 //			response.sendRedirect("Dashboard.jsp");

@@ -80,7 +80,7 @@
     }
     else { %> 
 			<div class="col-10" style="margin-top: 10px">
-				<p class="alert alert-success d-inline-block" role="alert" style="border-radius: 10px;"><i class="fa-solid fa-user-shield"></i> <%= (String)session.getAttribute("username") %></p>
+				<p class="alert alert-success d-inline-block" role="alert" style="border-radius: 10px;"><i class="fa-solid fa-user-shield"></i> <%= (String)session.getAttribute("fullname") %></p>
 				<button class="btn btn-primary" >
 					<a href="Dashboard.jsp" style="color:white"><i class="fa-solid fa-house"></i> Dashboard</a>
 				</button>

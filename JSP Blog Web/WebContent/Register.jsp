@@ -50,7 +50,7 @@
        <button class="btn btn-primary" ><a href="Login.jsp" style="color:white"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</a></button>
    </div>
    
-        <section class="container wrapper col-4" style="border-radius:10px;margin-top:30px;padding:30px;background-color: white;">
+        <section class="container wrapper col-4" style="border-radius:10px;margin-top:0px;padding:30px;background-color: white;">
             <form action="RegisterServlet" method="POST">
                 <h1 class="d-flex justify-content-center">Register</h1>  
                 
@@ -64,8 +64,9 @@
                     <div class="alert alert-danger" role="alert"><i class="fa-solid fa-triangle-exclamation"></i> <%= request.getAttribute("mess_register_error") %></div>
                 <% } %>
                 
-                Username<input type="text" class="form-control" name="username" placeholder="Username" /> </br>
-                Password<input type="password" class="form-control" name="password" placeholder="Password" /> <br>
+                <i class="fa-solid fa-user"></i> Username<input type="text" class="form-control" name="username" placeholder="Username" /> </br>
+                <i class="fa-solid fa-key"></i> Password<input type="password" class="form-control" name="password" placeholder="Password" /> <br>
+                <i class="fa-solid fa-signature"></i> Full Name<input type="text" class="form-control" name="fullname" placeholder="Full Name" /> <br>
                 <button type="submit" class="btn btn-block btn-outline-primary" ><i class="fa-solid fa-user-plus"></i> Register</button>
                 <input type="reset" value="Reset" class="btn btn-block btn-outline-primary"> 
             </form>

@@ -26,7 +26,6 @@ public class ShowAllServlet extends HttpServlet {
 //		request.getSession().setAttribute("articles", Articles);
 		request.setAttribute("articles", Articles);
 		request.getRequestDispatcher("Dashboard.jsp").forward(request, response);
-		
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

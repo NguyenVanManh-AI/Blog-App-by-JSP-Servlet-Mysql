@@ -9,6 +9,7 @@ import java.util.List;
 
 import main.java.model.bean.Article;
 import main.java.model.bean.User;
+import main.java.model.bean.User_Article;
 
 public class ArticleDAO {
     private Connection conn = DB.getConnection();
@@ -36,26 +37,27 @@ public class ArticleDAO {
 		return list;
 	} 
     
-    public Article postDetails(String id_article) {
-    	String sql = "SELECT * FROM articles WHERE id = ?";
-    	Article Article = null;
+    public User_Article postDetails(String id_article) {
+    	String sql = "SELECT a.id, a.title, a.content , a.id_user , u.fullname FROM articles as a LEFT JOIN users as u ON a.id_user = u.id WHERE a.id = ?";
+    	User_Article User_Article = null;
 		
 		try {
 			preStmt = conn.prepareStatement(sql);
 			preStmt.setString(1, id_article);
 			ResultSet resultSet = preStmt.executeQuery();
 			if (resultSet.next()) {
-				Article = new Article(0,"","",0);
-				Article.setId(resultSet.getInt("id"));
-				Article.setTitle(resultSet.getString("title"));
-				Article.setContent(resultSet.getString("content"));
-				Article.setId_user(resultSet.getInt("id_user"));
+				User_Article = new User_Article(0,"","",0,"");
+				User_Article.setId(resultSet.getInt("id"));
+				User_Article.setTitle(resultSet.getString("title"));
+				User_Article.setContent(resultSet.getString("content"));
+				User_Article.setId_user(resultSet.getInt("id_user"));
+				User_Article.setFullname(resultSet.getString("fullname"));
 			}
 		} 
 		catch (SQLException ex) {
 			ex.getStackTrace();
 		}
-		return Article;
+		return User_Article;
 	}
     
     public boolean postDelete(String id_article) {

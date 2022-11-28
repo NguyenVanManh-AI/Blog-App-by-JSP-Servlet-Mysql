@@ -24,9 +24,10 @@ public class UserDAO {
 			ResultSet resultSet = preStmt.executeQuery();
 			
 			if (resultSet.next()) {
-				User = new User("","");
+				User = new User("","","");
 				User.setUsername(username);
 				User.setPassword(resultSet.getString("password"));
+				User.setFullname(resultSet.getString("fullname"));
 				User.setId(resultSet.getInt("id"));
 			}
 		} catch (SQLException ex) {
@@ -36,11 +37,12 @@ public class UserDAO {
 	}
 	
 	public void register(User user) {
-		String sql = "INSERT INTO users(username, password) VALUE (?, ?)";
+		String sql = "INSERT INTO users(username, password, fullname) VALUE (?, ?, ?)";
 		try {
 			preStmt = conn.prepareStatement(sql);
 			preStmt.setString(1, user.getUsername());
 			preStmt.setString(2, user.getPassword());
+			preStmt.setString(3, user.getFullname());
 			preStmt.executeUpdate();
 		} catch (SQLException ex) {
 			System.out.println(ex.getMessage());

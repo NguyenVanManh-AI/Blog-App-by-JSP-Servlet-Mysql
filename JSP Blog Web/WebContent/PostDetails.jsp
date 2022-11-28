@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<%@page import="main.java.model.bean.Article"%>
+<%@page import="main.java.model.bean.User_Article"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 
@@ -16,6 +16,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="shortcut icon" href="style/logo_blog.png" />
 <style>
+#main {
+   margin-top:-10px;
+   margin-bottom:-10px
+}
 .title {
 	font-size: 20px;
 	font-weight: bold;
@@ -29,7 +33,7 @@
 }
 #main li {
 	width: 69%;
-	height: 400px;
+	height: 440px;
 	padding: 10px 30px;
 	box-shadow: rgb(204, 219, 232) 6px 6px 12px -3px inset, rgba(255, 255, 255, 0.5) -6px -6px 12px 2px inset;
 	border: 20px solid white;
@@ -48,9 +52,33 @@
 }
 
 /* ẩn thanh scroll đi */
+/*
 ::-webkit-scrollbar {
     display: none;
 }
+*/
+
+    ::-webkit-scrollbar { 
+        width: 13px;
+    }
+
+    ::-webkit-scrollbar-track { 
+        background: white;  
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: #888;  
+        border-radius: 10px;
+        border: 3px solid transparent; 
+        background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover { 
+        background: #007bff; 
+        border-radius: 10px;
+        border: 3px solid transparent;
+        background-clip: content-box;
+    }
 
 </style>
 
@@ -94,7 +122,7 @@
     }
     else { %> 
 			<div class="col-9" style="margin-top: 10px">
-				<p class="alert alert-success d-inline-block" role="alert" style="border-radius: 10px;"><i class="fa-solid fa-user-shield"></i> <%= (String)session.getAttribute("username") %></p>
+				<p class="alert alert-success d-inline-block" role="alert" style="border-radius: 10px;"><i class="fa-solid fa-user-shield"></i> <%= (String)session.getAttribute("fullname") %></p>
 				<button class="btn btn-primary" >
 					<a href="MyPost.jsp" style="color:white"><i class="fa-solid fa-list"></i></i> My Post</a>
 				</button>
@@ -120,7 +148,7 @@
 		<div id="main">
 			<li>
 				<%
-					Article article = (Article) request.getAttribute("article_detail");
+				User_Article article = (User_Article) request.getAttribute("article_detail");
 					if(article == null){
 						response.sendRedirect("PostDetailsServlet");
 					}
@@ -133,6 +161,7 @@
 				%>
 					<p class="title alert alert-primary" style="cursor:default ;"><i class="fa-solid fa-bookmark"></i> <%= article.getTitle() %></p>
 					<textarea rows="7" style="" disabled class="content"><%= article.getContent() %></textarea>					
+					<p class="col-6 title alert alert-success mx-auto " style="display:flex;justify-content:center;font-size:10px;cursor:default ;"><i class="fa-solid fa-user-pen"></i> Author : <%= article.getFullname() %></p>
 				</a>
 			<% } %>
 			</li>

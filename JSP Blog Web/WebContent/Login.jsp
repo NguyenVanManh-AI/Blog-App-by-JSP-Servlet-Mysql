@@ -59,8 +59,8 @@
                     <div class="alert alert-danger" role="alert"><i class="fa-solid fa-triangle-exclamation"></i> <%= request.getAttribute("mess_login_error") %></div>
                 <% } %>
                 
-                Username<input type="text" class="form-control" name="username" placeholder="Username" /> </br>
-                Password<input type="password" class="form-control" name="password" placeholder="Password" /> <br>
+                <i class="fa-solid fa-user"></i> Username<input type="text" class="form-control" name="username" placeholder="Username" /> </br>
+                <i class="fa-solid fa-key"></i> Password<input type="password" class="form-control" name="password" placeholder="Password" /> <br>
                 <button type="submit" class="btn btn-block btn-outline-primary" ><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</button> 
                 <input type="reset" value="Reset" class="btn btn-block btn-outline-primary"> 
             </form>

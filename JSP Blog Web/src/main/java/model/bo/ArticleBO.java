@@ -7,6 +7,7 @@ import main.java.model.bean.Article;
 import main.java.model.bean.User;
 import main.java.model.dao.ArticleDAO;
 import main.java.model.dao.UserDAO;
+import main.java.model.bean.User_Article;
 
 public class ArticleBO {
 	public List<Article> getAll() {
@@ -14,7 +15,7 @@ public class ArticleBO {
 		return ArticleDAO.getAll();
 	}
 	
-	public Article postDetails(String id_article) {
+	public User_Article postDetails(String id_article) {
 		ArticleDAO ArticleDAO = new ArticleDAO();
 		return ArticleDAO.postDetails(id_article);
 	}

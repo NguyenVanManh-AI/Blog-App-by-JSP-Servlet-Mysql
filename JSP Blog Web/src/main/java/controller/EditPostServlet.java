@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import main.java.model.bean.Article;
+import main.java.model.bean.User_Article;
 import main.java.model.bo.ArticleBO;
 
 @WebServlet("/EditPostServlet")
@@ -28,10 +29,10 @@ public class EditPostServlet extends HttpServlet {
 		
 		String id_article = request.getParameter("id_article");
 		ArticleBO ArticleBO = new ArticleBO();
-		Article Article = null;
+		User_Article User_Article = null;
 		try {
-			Article = ArticleBO.postDetails(id_article);
-			request.setAttribute("article_detail", Article);
+			User_Article = ArticleBO.postDetails(id_article);
+			request.setAttribute("article_detail", User_Article);
 			request.getRequestDispatcher("EditPost.jsp").forward(request, response);
 		} 
 		catch (Exception e) {

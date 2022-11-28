@@ -21,25 +21,45 @@ public class RegisterServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if(request.getCharacterEncoding() == null)
+	    {
+	        request.setCharacterEncoding("UTF-8");
+	    }
 		request.getRequestDispatcher("Register.jsp").forward(request, response);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		if(request.getCharacterEncoding() == null)
+	    {
+	        request.setCharacterEncoding("UTF-8");
+	    }
+		
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+		String fullname = request.getParameter("fullname");
 		
 		// Mọi lỗi ta nên bắt ngay tại controller sẽ đảm bảo model thực hiện thành công 
 		// tên đăng nhập không được để trống và không được nhỏ hơn 6 kí tự 
 		if(username == "" || username == null || username.length() < 6) {
 			request.setAttribute("mess_register_error", "Username can't be blank and can't be less than 6 characters !!!");
 			request.getRequestDispatcher("Register.jsp").forward(request, response);
+			return ; 
 		}
 		
 		// password cũng tương tự 
 		if(password == "" || password == null || password.length() < 6) {
 			request.setAttribute("mess_register_error", "Password can't be blank and can't be less than 6 characters !!!");
 			request.getRequestDispatcher("Register.jsp").forward(request, response);
+			return ; 
 		}
+		
+		if(fullname == "" || fullname == null || fullname.length() < 6) {
+			request.setAttribute("mess_register_error", "Name can't be blank !!!");
+			request.getRequestDispatcher("Register.jsp").forward(request, response);
+			return ; 
+		}
+		
 		
 		// kiểm tra xem username đó có tồn tại hay không 
 		UserBO UserBO = new UserBO();
@@ -52,7 +72,7 @@ public class RegisterServlet extends HttpServlet {
 		if (User == null ) {
 			// vì ta để id tự động tăng nên cho nó bằng 0 để không lỗi 
 			try {
-			    User user = new User(username,password);
+			    User user = new User(username,password,fullname);
 			    UserBO userBO = new UserBO();
 			    userBO.register(user);
 			    request.setAttribute("mess_register_succes", "Create Account Success !");

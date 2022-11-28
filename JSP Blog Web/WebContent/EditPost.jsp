@@ -1,5 +1,6 @@
 <%@ page language="java" pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" %>
 <%@page import="main.java.model.bean.Article"%>
+<%@page import="main.java.model.bean.User_Article"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 
@@ -91,7 +92,7 @@
 				<%
 				    // nếu chưa lấy được bài viết thì ta cho nó về MyPost luôn 
 				    // chứ không gọi lại nữa 
-					Article article = (Article) request.getAttribute("article_detail");
+					User_Article article = (User_Article) request.getAttribute("article_detail");
 					if(article == null){
 						response.sendRedirect("MyPost.jsp");
 					}
