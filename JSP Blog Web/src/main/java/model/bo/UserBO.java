@@ -18,4 +18,9 @@ public class UserBO {
 		userDAO.register(user);
 	}
 	
+	public void update(User user) {
+		UserDAO userDAO = new UserDAO();
+		userDAO.update(user);
+	}
+	
 }

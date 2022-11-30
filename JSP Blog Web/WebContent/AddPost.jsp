@@ -14,7 +14,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="shortcut icon" href="style/logo_blog.png" />
 <style>
-
+#infor:hover {
+background-color: #6bd845;
+}
 </style>
 
 </head>
@@ -66,7 +68,7 @@
     }
     else { %> 
 			<div class="col-9" style="margin-top: 10px">
-				<p class="alert alert-success d-inline-block" role="alert" style="border-radius: 10px;"><i class="fa-solid fa-user-shield"></i> <%= (String)session.getAttribute("username") %></p>
+				<a href="Infor.jsp" ><p id="infor" class="alert alert-success d-inline-block" role="alert" style="border-radius: 10px;"><i class="fa-solid fa-user-shield"></i> <%= (String)session.getAttribute("fullname") %></p></a>
 				<button class="btn btn-primary" >
 					<a href="MyPost.jsp" style="color:white"><i class="fa-solid fa-list"></i></i> My Post</a>
 				</button>

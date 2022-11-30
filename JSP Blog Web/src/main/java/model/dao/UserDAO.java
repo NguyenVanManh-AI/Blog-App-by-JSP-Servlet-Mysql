@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import main.java.model.bean.Article;
 import main.java.model.bean.User;
 
 public class UserDAO {
@@ -43,6 +44,20 @@ public class UserDAO {
 			preStmt.setString(1, user.getUsername());
 			preStmt.setString(2, user.getPassword());
 			preStmt.setString(3, user.getFullname());
+			preStmt.executeUpdate();
+		} catch (SQLException ex) {
+			System.out.println(ex.getMessage());
+			System.out.println(ex.getStackTrace());
+		}
+	}
+	
+	public void update(User user) { 
+		String sql = "UPDATE users SET password = ? , fullname = ? WHERE username = ? ";
+		try {
+			preStmt = conn.prepareStatement(sql);
+			preStmt.setString(1, user.getPassword());
+			preStmt.setString(2, user.getFullname());
+			preStmt.setString(3, user.getUsername());
 			preStmt.executeUpdate();
 		} catch (SQLException ex) {
 			System.out.println(ex.getMessage());
