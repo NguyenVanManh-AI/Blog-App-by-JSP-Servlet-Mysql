@@ -36,7 +36,7 @@ background-color: #6bd845;
 }
 #main li {
 	width: 69%;
-	height: 440px;
+	height: 840px;
 	padding: 10px 30px;
 	box-shadow: rgb(204, 219, 232) 6px 6px 12px -3px inset, rgba(255, 255, 255, 0.5) -6px -6px 12px 2px inset;
 	border: 20px solid white;
@@ -44,7 +44,7 @@ background-color: #6bd845;
 	cursor:default
 }
 .content {
-	height: 270px;
+	height: 670px;
 	overflow: hidden;
 	overflow-y: scroll;
 	width: 100%;
@@ -163,7 +163,7 @@ background-color: #6bd845;
 						// out.print(session.getAttribute("id"));
 				%>
 					<p class="title alert alert-primary" style="cursor:default ;"><i class="fa-solid fa-bookmark"></i> <%= article.getTitle() %></p>
-					<textarea rows="7" style="" disabled class="content"><%= article.getContent() %></textarea>					
+					<div class="content"><%= article.getContent() %></div>					
 					<p class="col-6 title alert alert-success mx-auto " style="display:flex;justify-content:center;font-size:10px;cursor:default ;"><i class="fa-solid fa-user-pen"></i> Author : <%= article.getFullname() %></p>
 				</a>
 			<% } %>
@@ -185,6 +185,10 @@ background-color: #6bd845;
 			</div>
             <% } 
             else {}%>
+            
+            <br>
+            <br>
+            <br>
    </div>
 </body>
 </body>

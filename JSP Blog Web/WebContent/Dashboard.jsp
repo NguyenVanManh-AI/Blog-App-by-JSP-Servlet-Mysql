@@ -17,7 +17,7 @@
 <link rel="shortcut icon" href="style/logo_blog.png" />
 <style>
 .title {
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: bold;
 	width: 100%;
 	height: 20px;
@@ -31,6 +31,10 @@
 }
 #infor:hover {
 background-color: #6bd845;
+}
+
+.title:hover {
+text-decoration: underline;
 }
 </style>
 
@@ -101,9 +105,9 @@ background-color: #6bd845;
 		for (int i = 0; i < articles.size(); i++) {
 %>
 			<li>
-				<a href="PostDetailsServlet?id_article=<%= articles.get(i).getId()%>&id_user=<%= articles.get(i).getId_user() %>">
+				<a style="text-decoration: none" href="PostDetailsServlet?id_article=<%= articles.get(i).getId()%>&id_user=<%= articles.get(i).getId_user() %>">
 					<p class="title" style=""><i class="fa-solid fa-bookmark"></i> <%= articles.get(i).getTitle() %></p>
-					<textarea rows="7" style="width: 100%;outline: none;border: none;cursor: pointer;overflow: hidden;margin-top: -10px;resize: none;" disabled class="content"><%= articles.get(i).getContent() %></textarea>					
+					<div style="height:160px;width: 100%;outline: none;border: none;cursor: pointer;overflow: hidden;margin-top: -10px;resize: none;" disabled ><%= articles.get(i).getContent() %></div>					
 				</a>
 			</li>
 

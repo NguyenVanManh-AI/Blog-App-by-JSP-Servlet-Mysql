@@ -20,7 +20,7 @@
 background-color: #6bd845;
 }
 .title {
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: bold;
 	width: 100%;
 	height: 20px;
@@ -31,6 +31,9 @@ background-color: #6bd845;
 	cursor: pointer;
 	line-height: 20px;
 	margin-top: 6px;
+}
+.title:hover {
+text-decoration: underline;
 }
 </style>
 
@@ -116,9 +119,9 @@ background-color: #6bd845;
 				number++;
 %>
 			<li>
-				<a href="PostDetailsServlet?id_article=<%= articles.get(i).getId()%>&id_user=<%= articles.get(i).getId_user() %>">
+				<a style="text-decoration: none" href="PostDetailsServlet?id_article=<%= articles.get(i).getId()%>&id_user=<%= articles.get(i).getId_user() %>">
 					<p class="title" style=""><i class="fa-solid fa-bookmark"></i> <%= articles.get(i).getTitle() %></p>
-					<textarea rows="7" style="width: 100%;outline: none;border: none;cursor: pointer;overflow: hidden;margin-top: -10px;resize: none;" disabled class="content"><%= articles.get(i).getContent() %></textarea>					
+					<div style="text-decoration:none;height:160px;width: 100%;outline: none;border: none;cursor: pointer;overflow: hidden;margin-top: -10px;resize: none;" disabled ><%= articles.get(i).getContent() %></div>					
 				</a>
 			</li>
 <%
